@@ -5,7 +5,13 @@ export default function SideBar() {
     return (
         <div class="sidebar">
             
-            <Usuario/>
+            <Usuario
+            key = {"Catana"}
+            imagem = {"./img/catanacomics.svg"}
+            nomeusuario = {"catanacomics"}
+            nome = {"Catana"}
+            />
+            
             <Sugestoes/>
 
             <div class="links">

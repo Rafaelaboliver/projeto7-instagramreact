@@ -1,10 +1,12 @@
 export default function Posts() {
+
+    const infoPosts = [
+        { imagem: "./img/meowed.svg", usuario: "meowed", conteudo: "./img/gato-telefone.svg", curtida: "./img/respondeai.svg", texto1: "Curtido por ", texto2: "respondeai", texto3: "e ", texto4: "outras 101.523 pessoas" },
+        { imagem: "./img/barked.svg", usuario: "barked", conteudo: "./img/dog.svg", curtida: "./img/adorable_animals.svg", texto1: "Curtido por ", texto2: "adorable_animals", texto3: " e ", texto4: "outras 99.159 pessoas" }
+    ]
     return (
         <div class="posts">
-
-            <Post usuarioimg="./img/meowed.svg" usuarionome="meowed" conteudoimg="./img/gato-telefone.svg" curtidaimg="./img/respondeai.svg" texto1="Curtido por " texto2="respondeai" texto3="e " texto4="outras 101.523 pessoas" />
-            <Post usuarioimg="./img/barked.svg" usuarionome="barked" conteudoimg="./img/dog.svg" curtidaimg="./img/adorable_animals.svg" texto1="Curtido por " texto2="adorable_animals" texto3=" e " texto4="outras 99.159 pessoas" />
-
+            {infoPosts.map((posts) => <Post key={posts.imagem} imagem={posts.imagem} usuario ={posts.usuario} conteudo={posts.conteudo} curtida={posts.curtida} texto1={posts.texto1} texto2={posts.texto2} texto3={posts.texto3} texto4={posts.texto4} />)}
         </div>
     )
 }
@@ -14,8 +16,8 @@ function Post(props) {
         <div class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src={props.usuarioimg} />
-                    {props.usuarionome}
+                    <img src={props.imagem} />
+                    {props.usuario}
                 </div>
                 <div class="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -23,7 +25,7 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.conteudoimg} />
+                <img src={props.conteudo} />
             </div>
 
             <div class="fundo">
@@ -39,7 +41,7 @@ function Post(props) {
                 </div>
 
                 <div class="curtidas">
-                    <img src={props.curtidaimg} />
+                    <img src={props.curtida} />
                     <div class="texto">
                         {props.texto1} <strong>{props.texto2}</strong> {props.texto3} <strong>{props.texto4}</strong>
                     </div>
