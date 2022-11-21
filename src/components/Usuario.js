@@ -1,19 +1,18 @@
 import React from "react"
 
 export default function Usuario(props) {
-    const [nome, setNome] = React.useState(props.nomeusuario)
 
+    const [nome, setNome] = React.useState(props.nomeusuario)
+    const [foto,setFoto] = React.useState(props.imagem)
+    
     function alterarUsuario() {
         const resposta = prompt('Insira nome de usuário!')
         setNome(resposta)
     }
 
-    const [foto,setFoto] = React.useState(props.imagem)
-
     function alterarImagem() {
         const resposta = prompt('Insira o link da sua foto de perfil!')
         setFoto(resposta)
-
     }
 
     return (
