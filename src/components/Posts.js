@@ -38,7 +38,7 @@ function Post(props) {
     //!condição = assumir que ela tenha valor nulo, undefined ou vazio
 
     return (
-        <div class="post">
+        <div data-test="post" class="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.imagem} />
@@ -50,24 +50,24 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img onDoubleClick={!curtida ? adicionarCurtida : () => { }} src={props.conteudo} />
+                <img data-test="post-image" onDoubleClick={!curtida ? adicionarCurtida : () => { }} src={props.conteudo} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon onClick={adicionarCurtida} name={coracao ? "heart" : "heart-outline"} style={coracao ? {color: "#E30002"} : {backgroundcolor: "#FAFAFA"}}></ion-icon>
+                        <ion-icon data-test="like-post" onClick={adicionarCurtida} name={coracao ? "heart" : "heart-outline"} style={coracao ? {color: "#E30002"} : {backgroundcolor: "#FAFAFA"}}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon onClick={salvarPost} name={salvar ? "bookmark" : "bookmark-outline"}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={salvarPost} name={salvar ? "bookmark" : "bookmark-outline"}></ion-icon>
                     </div>
                 </div>
 
                 <div class="curtidas">
                     <img src={props.curtida} />
-                    <div class="texto">
+                    <div data-test="likes-number" class="texto">
                         {props.texto1} <strong>{props.texto2}</strong> {props.texto3} <strong>{props.texto4} {valor} {props.texto5} </strong>
                     </div>
                 </div>
